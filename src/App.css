@@ -4,3 +4,22 @@
   padding: 2rem;
   text-align: center;
 }
+
+
+.hiddenCard{
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hiddenCard.dogImg{
+  background-image: url("https://www.shutterstock.com/image-photo/french-bulldog-reading-newspaper-over-260nw-232010479.jpg");
+
+
+}
+
+.hiddenCard.catImg{
+  background-image: url("https://i.pinimg.com/736x/ba/92/7f/ba927ff34cd961ce2c184d47e8ead9f6.jpg");
+}

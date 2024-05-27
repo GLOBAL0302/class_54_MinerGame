@@ -1,11 +1,10 @@
-import {ICard} from '../../types';
+import {ICard} from '../../../types';
 import React from 'react';
 
 interface Props{
   item:ICard
   onClick:React.MouseEventHandler
 }
-
 
 const Card:React.FC<Props> = ({item, onClick}) => {
   let img = "border border-5 hiddenCard"

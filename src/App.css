@@ -23,3 +23,7 @@
 .hiddenCard.catImg{
   background-image: url("https://i.pinimg.com/736x/ba/92/7f/ba927ff34cd961ce2c184d47e8ead9f6.jpg");
 }
+
+#content{
+  position: relative;
+}

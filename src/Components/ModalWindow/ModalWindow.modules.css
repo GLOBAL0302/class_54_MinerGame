@@ -1,0 +1,19 @@
+#modalWindow{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  background: rgba(248, 248, 248, 0.8);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#modalContent{
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 30%;
+}
+

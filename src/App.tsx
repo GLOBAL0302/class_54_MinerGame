@@ -2,7 +2,8 @@
 import './App.css'
 import React from 'react';
 import {ICard} from './types';
-import Card from './Components/Card/Card';
+import Cards from './Components/Cards/Cards';
+import ModalWindow from './Components/ModalWindow/ModalWindow';
 
 const createItems = ()=>{
   let gameArray:ICard[] = []
@@ -16,9 +17,11 @@ const createItems = ()=>{
 
 function App() {
   const [items, setItems] = React.useState(createItems())
+  const restartGame =()=>{
+    setItems(createItems())
+  }
 
   const OnClick = (id:number)=>{
-    console.log()
     setItems((prevState)=>{
       return prevState.map((item)=>{
         if(item.id === id){
@@ -31,20 +34,18 @@ function App() {
       })
     })
   }
-
+  let checkGameEnd = items.filter(item=> item.clicked === true && item.hasItem === true).length;
 
   return (
     <>
       <h4>Find Cat</h4>
-      <div className='d-flex gap-2 flex-wrap' style={{maxWidth:"650px"}}>
-        {items.map((item:ICard) =>(
-          <Card
-            key={item.id}
-            item={item}
-            onClick={()=>OnClick(item.id)}
-          />
-        ))}
-        <p>Total Tries{items.filter(item=> item.clicked == true).length}</p>
+      <div className='d-flex gap-2 flex-wrap' style={{maxWidth:"650px"}} id="content">
+        <Cards
+          items={items}
+          onClick={OnClick}
+        />
+        <p>Total Tries: {items.filter(item=> item.clicked == true).length}</p>
+        <ModalWindow items={items} checkGameEnd={checkGameEnd} restartGame={restartGame}/>
       </div>
     </>
   )

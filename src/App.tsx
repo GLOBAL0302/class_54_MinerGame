@@ -4,6 +4,7 @@ import React from 'react';
 import {ICard} from './types';
 import Cards from './Components/Cards/Cards';
 import ModalWindow from './Components/ModalWindow/ModalWindow';
+import TotalAttempts from './Components/TotalAttempts/TotalAttempts';
 
 const createItems = ()=>{
   let gameArray:ICard[] = []
@@ -38,13 +39,13 @@ function App() {
 
   return (
     <>
-      <h4>Find Cat</h4>
+      <h2>Find Cat</h2>
       <div className='d-flex gap-2 flex-wrap' style={{maxWidth:"650px"}} id="content">
         <Cards
           items={items}
           onClick={OnClick}
         />
-        <p>Total Tries: {items.filter(item=> item.clicked == true).length}</p>
+        <TotalAttempts items={items}/>
         <ModalWindow items={items} checkGameEnd={checkGameEnd} restartGame={restartGame}/>
       </div>
     </>
